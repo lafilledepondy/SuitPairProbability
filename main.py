@@ -36,9 +36,8 @@ def conscePairs(cards):
         rank1 = int(card1[0])
         rank2 = int(card2[0])
 
-        if (rank2 == rank1 and card1[1] != card2[1]):
-            res.append(cards[i])
-            res.append(cards[i + 1])
+        if (rank2 == rank1 + 1 and card1[1] == card2[1]):
+            res.append([cards[i], cards[i + 1]])
 
     return res
 
@@ -51,8 +50,8 @@ def main():
     display(deck_of_cards)
 
     res = conscePairs(deck_of_cards)
-    print("\n" + "There are " + str(size(res)) + " consecutive pairs of the same suit.")
-    display(res)
+    print("\n" + "There are " + str(size(res)) + " sequence of 2 of the same suit.")
+    print(res)
     
     return 
 
